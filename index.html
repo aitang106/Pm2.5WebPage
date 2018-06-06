@@ -395,7 +395,7 @@
                     });
 
                     if(maxSimilarSite === '') {
-                        alert("無此測站");
+                        alert("無此測站error:1");
                     }
                     else {
                         updateSiteInfo(maxSimilarSite);
@@ -597,6 +597,8 @@
                         minsite = allsitelist[i].station;
                     }
                 }
+
+		alert("gps"+position.coords.latitude+','+position.coords.longitude+'location:'+minsite);
                 //------------------------------//
                 var wei = $(window).width();
                 
@@ -608,8 +610,8 @@
                 }
 
                 else {
-                    var el = 90 ;
-                    var dj0 = 90 ;
+                    var el = 7.7 ;
+                    var dj0 = 58 ;
                     var el = ((25.350149 - parseFloat( position.coords.latitude )) / 3.53) * 100 -6 ;
                     var dj0 =( (( parseFloat(position.coords.longitude ) -119.872162 ) / 2.21 ) ) *98 -5 ;
                     $("#point").css('left',dj0+'%' );
@@ -659,7 +661,7 @@
                     });
 
                     if(maxSimilarSite === '') {
-                        alert("無此測站");
+                        alert("無此測站eroor:2");
                     }
                     else {
                         updateSiteInfo(maxSimilarSite);
