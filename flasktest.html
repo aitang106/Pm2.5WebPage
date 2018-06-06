@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+
+
+
+<body>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <button id="test" value="test">test</button>
+
+
+
+
+    <script type=text/javascript>
+
+
+        $('#test').click(testFun);
+
+
+        function testFun() {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "http://220.134.52.177:5000/getSitePrediction",
+                data: JSON.stringify({siteName: '土城'}),
+                success: function (data) {
+                    alert(data['predictPM2_5_1hr']);
+
+                },
+                dataType: "json"
+            });
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
