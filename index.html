@@ -326,7 +326,7 @@
                 updateSiteInfo('龍潭');
                 setTimeout(function(){
 			getLocation();
-		},500);
+		},1000);
 
                 //updateSiteInfo(getLocation());
 
@@ -658,7 +658,9 @@
                     siteArray.forEach(function (sitename) {
 
                         var siteOnlyName = sitename.split('-')[1];
-
+			console.log(sitename);
+			console.log(inputSiteName);
+			console.log(siteOnlyName);
                         if(sitename === inputSiteName || siteOnlyName === inputSiteName) {
                             maxSimilarSite = siteOnlyName;
 			    //alert('in');
