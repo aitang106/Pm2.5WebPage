@@ -226,7 +226,7 @@
 
 
                 <div  id="map-box" class="map-box" style="position: relative;">
-                        <img   id="map-img" src="https://cors.now.sh/http://220.134.52.177/img/map/basemap_color_now.png"  class="map-img" alt="">
+                        <img   id="map-img" src="https://cors-anywhere.herokuapp.com/http://220.134.52.177/img/map/basemap_color_now.png"  class="map-img" alt="">
                         <img   id="point" src="point.png" class="point" alt="">
                   
                 </div>
@@ -297,11 +297,11 @@
                 var hr = id_name.split("_")[1];
 
                 if(hr === '0') {
-                    $("#map-img").attr("src", "https://cors.now.sh/http://220.134.52.177/img/map/basemap_color_now.png");
+                    $("#map-img").attr("src", "https://cors-anywhere.herokuapp.com/http://220.134.52.177/img/map/basemap_color_now.png");
                 }
                 else {
 
-                    $("#map-img").attr("src", "https://cors.now.sh/http://220.134.52.177/img/map/basemap_color_"+hr+"hr.png");
+                    $("#map-img").attr("src", "https://cors-anywhere.herokuapp.com/http://220.134.52.177/img/map/basemap_color_"+hr+"hr.png");
                 }
 
                 console.log(hr);
@@ -316,7 +316,7 @@
                 $.ajax({
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
-                    url: "https://cors.now.sh/http://220.134.52.177:5000/getSites",
+                    url: "https://cors-anywhere.herokuapp.com/http://220.134.52.177:5000/getSites",
                     success: function (data) {
                         appendDataToDataList(data);
                     },
@@ -428,7 +428,7 @@
                 $.ajax({
                     type: "POST",
                     contentType: "application/json; charset=utf-8",
-                    url: "https://cors.now.sh/http://220.134.52.177:5000/getSitePrediction",
+                    url: "https://cors-anywhere.herokuapp.com/http://220.134.52.177:5000/getSitePrediction",
                     data: JSON.stringify({siteName: siteName}),
                     success: function (data) {
                         updatePrediction(data);
