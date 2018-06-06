@@ -324,7 +324,10 @@
                 });
 
                 updateSiteInfo('龍潭');
-                getLocation();
+                setTimeout(function(){
+			getLocation();
+		},500);
+
                 //updateSiteInfo(getLocation());
 
                 //getLocation();
@@ -640,7 +643,8 @@
 
                     var maxSimilarity = 0;
                     var maxSimilarSite = '';
-
+		    //alert('siteArray:'+siteArray);
+		    //alert('inputSiteName:'+inputSiteName);
                     siteArray.forEach(function (sitename) {
 
                         var similarity = getSimilarity(sitename, inputSiteName);
@@ -650,13 +654,14 @@
                             maxSimilarSite = sitename.split('-')[1];
                         }
                     });
-
+		    
                     siteArray.forEach(function (sitename) {
 
                         var siteOnlyName = sitename.split('-')[1];
 
                         if(sitename === inputSiteName || siteOnlyName === inputSiteName) {
                             maxSimilarSite = siteOnlyName;
+			    //alert('in');
                         }
                     });
 
