@@ -662,15 +662,16 @@
                         if(sitename === inputSiteName || siteOnlyName === inputSiteName) {
                             maxSimilarSite = siteOnlyName;
 			    //alert('in');
+			    updateSiteInfo(maxSimilarSite);
                         }
                     });
 
-                    if(maxSimilarSite === '') {
+                    /*if(maxSimilarSite === '') {
                         alert("無此測站Warning:2");
                     }
                     else {
                         updateSiteInfo(maxSimilarSite);
-                    }
+                    }*/
 
                 }
             }
