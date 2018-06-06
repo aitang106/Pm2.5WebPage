@@ -9,7 +9,7 @@
 		<title>空氣污染預測</title>
 
 		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="https://cors-anywhere.herokuapp.com/http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
@@ -297,11 +297,11 @@
                 var hr = id_name.split("_")[1];
 
                 if(hr === '0') {
-                    $("#map-img").attr("src", "https://cors-anywhere.herokuapp.com/http://220.134.52.177/img/map/basemap_color_now.png");
+                    $("#map-img").attr("src", "https://cors.now.sh/http://220.134.52.177/img/map/basemap_color_now.png");
                 }
                 else {
 
-                    $("#map-img").attr("src", "https://cors-anywhere.herokuapp.com/http://220.134.52.177/img/map/basemap_color_"+hr+"hr.png");
+                    $("#map-img").attr("src", "https://cors.now.sh/http://220.134.52.177/img/map/basemap_color_"+hr+"hr.png");
                 }
 
                 console.log(hr);
