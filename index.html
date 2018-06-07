@@ -320,7 +320,9 @@
                     success: function (data) {
                         appendDataToDataList(data);
 			updateSiteInfo('龍潭');
-			getLocation();
+			setTimeout(function(){
+				getLocation();
+			},1000);
                     },
                     dataType: "json"
                 });
