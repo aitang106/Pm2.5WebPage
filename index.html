@@ -319,14 +319,16 @@
                     url: "https://cors-anywhere.herokuapp.com/http://220.134.52.177:5000/getSites",
                     success: function (data) {
                         appendDataToDataList(data);
+			updateSiteInfo('龍潭');
+			getLocation();
                     },
                     dataType: "json"
                 });
 
-                updateSiteInfo('龍潭');
+                /*updateSiteInfo('龍潭');
                 setTimeout(function(){
 			getLocation();
-		},1000);
+		},1000);*/
 
                 //updateSiteInfo(getLocation());
 
@@ -665,6 +667,7 @@
                             maxSimilarSite = siteOnlyName;
 			    //alert('in');
 			    updateSiteInfo(maxSimilarSite);
+
                         }
                     });
 
