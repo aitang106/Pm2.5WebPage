@@ -55,7 +55,7 @@
 				</div>
 			</div> <!-- .site-header -->
 
-            <p id="position_gps"></p>
+            
 
 			<div class="hero" data-bg-image="images/airpollution2.jpg">
 				<div class="container">
@@ -227,7 +227,7 @@
 
                 <div  id="map-box" class="map-box" style="position: relative;">
                         <img   id="map-img" src="https://cors.now.sh/http://220.134.52.177/img/map/basemap_color_now.png"  class="map-img" alt="">
-                        <img   style="left:58%; top:7.7%;"id="point" src="point.png" class="point" alt="">
+                        <img   style="left:36.6%; top:26%;"id="point" src="point.png" class="point" alt="">
                   
                 </div>
                 
@@ -319,10 +319,10 @@
                     url: "https://cors-anywhere.herokuapp.com/http://220.134.52.177:5000/getSites",
                     success: function (data) {
                         appendDataToDataList(data);
-			updateSiteInfo('龍潭');
-			setTimeout(function(){
-				getLocation();
-			},1000);
+		                //updateSiteInfo('龍潭');
+            			setTimeout(function(){
+            			getLocation();
+            			},1000);
                     },
                     dataType: "json"
                 });
@@ -578,13 +578,31 @@
 
 
             //劭雍改的
-            var x = document.getElementById("position_gps");
+            
             function getLocation() {
-                if (navigator.geolocation) {
+                if ( navigator.geolocation) {
                    //navigator.geolocation.getCurrentPosition(showPosition);
-                    navigator.geolocation.getCurrentPosition(get_near_site);
-                } else {
-                    x.innerHTML = "Geolocation is not supported by this browser.";
+                    var startPos;
+                    var geoOptions = {
+                     timeout: 10 * 1000
+                    }
+
+                    var geoError = function(error) {
+                        console.log('Error occurred. Error code: ' + error.code);
+                        updateSiteInfo('豐原');
+                        // error.code can be:
+                        //   0: unknown error
+                        //   1: permission denied
+                        //   2: position unavailable (error response from location provider)
+                        //   3: timed out
+                    };
+
+                    navigator.geolocation.getCurrentPosition(get_near_site, geoError,geoOptions);
+                    //alert('have gps');
+                } 
+                else {
+                    //x.innerHTML = "Geolocation is not supported by this browser.";
+                    alert('this browser cant support GPS position');
                 }
             }
             function showPosition(position) {
@@ -661,10 +679,10 @@
 		    
                     siteArray.forEach(function (sitename) {
 
-                        var siteOnlyName = sitename.split('-')[1];
-			console.log(sitename);
-			console.log(inputSiteName);
-			console.log(siteOnlyName);
+                    var siteOnlyName = sitename.split('-')[1];
+        			//console.log(sitename);
+        			//console.log(inputSiteName);
+        			//console.log(siteOnlyName);
                         if(sitename === inputSiteName || siteOnlyName === inputSiteName) {
                             maxSimilarSite = siteOnlyName;
 			    //alert('in');
